@@ -1,0 +1,60 @@
+# Kubernetes Demo Commands
+
+## 1. Pods
+# Create a pod using a YAML file
+kubectl apply -f pod.yaml
+
+# View the created pod
+kubectl get pods
+
+# Describe the pod to see detailed information
+kubectl describe pod tic-tac-toe-pod
+
+# Delete the pod
+kubectl delete pod tic-tac-toe-pod
+
+---
+
+## 2. ReplicaSets
+# Create a ReplicaSet using a YAML file
+kubectl apply -f replicaset.yaml
+
+# View the created ReplicaSet
+kubectl get rs
+
+# Scale the ReplicaSet to 3 replicas
+kubectl scale rs tic-tac-toe-replicaset --replicas=3
+
+# Delete the ReplicaSet
+kubectl delete rs tic-tac-toe-replicaset
+
+---
+
+## 3. Maintaining Desired State
+# Update the ReplicaSet YAML file to change the number of replicas
+# Apply the updated YAML file
+kubectl apply -f replicaset.yaml
+
+# Verify the updated state
+kubectl get rs
+
+---
+
+## 4. The Kubernetes Scheduler
+# Create a pod with a nodeSelector to schedule it on a specific node
+kubectl apply -f pod-with-nodeselector.yaml
+
+# View the pod and its assigned node
+kubectl get pods -o wide
+
+# Create a pod with a taint and toleration
+kubectl apply -f pod-with-toleration.yaml
+
+# View the pod and its assigned node
+kubectl get pods -o wide
+
+---
+
+# Note:
+# - Ensure the YAML files (pod.yaml, replicaset.yaml, pod-with-nodeselector.yaml, pod-with-toleration.yaml) are created and available in the working directory before running these commands.
+# - Use 'kubectl delete -f <file-name>' to delete resources created from YAML files.
