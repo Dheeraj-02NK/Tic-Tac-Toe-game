@@ -12,10 +12,11 @@ COPY script.js /usr/share/nginx/html/script.js
 # Expose port 80 to allow access to the app
 EXPOSE 80
 
+
 #docker build -t tic-tac-toe-app .
 #docker run -d -p 80:80 --name tic-tac-toe-container tic-tac-toe-app
 
-#docker start tic-tac-toe-contain
-#docker run -d -p 80:80 --name tic-tac-toe-contain tic-tac-toe-app
+#docker start tic-tac-toe-container
+#docker run -d -p 80:80 --name tic-tac-toe-container tic-tac-toe-app
 #docker ps
-#docker update --restart unless-stopped tic-tac-toe-contain
+#docker update --restart unless-stopped tic-tac-toe-container
